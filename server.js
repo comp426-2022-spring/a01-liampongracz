@@ -17,6 +17,7 @@ const port = args['port'] || 3000
 fs.readFile('./www/index.html', 'utf8', (err, data)=> {
     if (err) {
         console.error(err)
+        return
         process.exit(1)
     }
     page = data
@@ -30,6 +31,7 @@ fs.readFile('./www/index.html', 'utf8', (err, data)=> {
         console.log(`Server running at port ${port}`)
     })
 })
+
 // If there is an error, put it on the console error, return, and exit with error code 1. 
 // Do not be nice about exiting.
 
